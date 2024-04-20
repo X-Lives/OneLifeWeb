@@ -1,10 +1,10 @@
 #!/bin/bash
 set -eu
 
-echo -n "Enter domain for web server (web.twohoursonelife.com): "
+echo -n "输入 web 服务器的域名 (web.twohoursonelife.com): "
 read DOMAIN
 
-echo -n "Enter game server domain and port (play.twohoursonelife.com 8005): "
+echo -n "输入游戏服务器域和端口 (play.twohoursonelife.com 8005): "
 read GAME_SERVER
 
 # Add PHP repository
@@ -49,4 +49,4 @@ echo "twohoursonelife $GAME_SERVER" >> /var/www/$DOMAIN/OneLifeWeb/web/public/re
 certbot -n --agree-tos --nginx --no-redirect -m admin@twohoursonelife.com -d $DOMAIN
 
 # Done
-echo "Setup Complete. Further config may be required. See SETUP.md"
+echo "设置完成。可能需要进一步配置。参见 SETUP.md"
